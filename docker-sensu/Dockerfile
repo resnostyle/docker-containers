@@ -1,5 +1,5 @@
 FROM centos:6
-MAINTAINER Johnny Horvi <johnny.horvi@gmail.com>
+MAINTAINER Bryan Pearson <bwp.pearson@gmail.com>
 
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 RUN rpm --import http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
