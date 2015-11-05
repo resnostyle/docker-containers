@@ -1,5 +1,5 @@
-FROM centos:6
-MAINTAINER Bryan Pearson <bwp.pearson@gmail.com>
+FROM resnostyle/base
+Maintainer Bryan Pearson <bwp.pearson@gmail.com>
 
 RUN yum -y install git-core wget
 
