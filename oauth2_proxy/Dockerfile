@@ -1,0 +1,20 @@
+FROM resnostyle/base
+Maintainer Bryan Pearson <bwp.pearson@gmail.com>
+
+ENV VERSION 2.0.1
+
+ADD https://github.com/bitly/oauth2_proxy/releases/download/$VERSION/oauth2_proxy-$VERSION.linux-amd64.go1.4.2.tar.gz /tmp/oauth2_proxy.tgz
+
+WORKDIR /tmp
+
+RUN tar zxf oauth2_proxy.tgz \
+    && mv oauth2_proxy-$VERSION.linux-amd64.go1.4.2 /usr/local/bin/ \
+    && rm -rf /tmp/google_auth_proxy*
+
+VOLUME ["/config"]
+
+ONBUILD ADD ./oauth_proxy.cfg /config/oauth_proxy.cfg
+
+EXPOSE 4180
+
+CMD ["oauth2_proxy", "-config", "/config/oauth_proxy.cfg"]

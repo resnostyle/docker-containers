@@ -1,10 +1,6 @@
 FROM resnostyle/base-java
 Maintainer Bryan Pearson <bwp.pearson@gmail.com>
 
-
-ENV DEBIAN_FRONTEND noninteractive
-ENV HOME /root
-
 # Madsonic Package Information
 ENV PKG_NAME madsonic
 ENV PKG_VER 6.0

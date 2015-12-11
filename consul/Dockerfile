@@ -1,15 +1,15 @@
 FROM resnostyle/base
 MAINTAINER bwp.pearson@gmail.com
 
-RUN 
-    apt-get install -qy wget 
-    apt-get -y clean && \
-    
+ENV CONSUL_VER 0.5.2
+
+RUN yum install -y wget && \
+    wget https://releases.hashicorp.com/consul/${CONSUL_VER}/consul_${CONSUL_VER}_linux_amd64.zip && \
+    yum purge -y wget 
+
 
 #VOLUME /config
 #VOLUME /data
 
 #EXPOSE 8081
 
-
-#https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
