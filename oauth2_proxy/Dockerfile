@@ -13,8 +13,8 @@ RUN tar zxf oauth2_proxy.tgz \
 
 VOLUME ["/config"]
 
-ONBUILD ADD ./oauth_proxy.cfg /config/oauth_proxy.cfg
-
+ADD ./oauth_proxy.cfg /config/oauth_proxy.cfg
+ADD ./auth_emails.txt /config/auth_emails.txt
 EXPOSE 4180
 
 CMD ["oauth2_proxy", "-config", "/config/oauth_proxy.cfg"]
