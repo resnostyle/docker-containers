@@ -18,7 +18,7 @@ CMD ["/sbin/my_init"]
 RUN yum install -y wget unzip
 
 # download madsonic
-RUN mkdir -p /var/madsonic/transcode \
+RUN mkdir -p /var/${PKG_NAME}/transcode \
   && wget -O /var/${PKG_NAME}/${PKG_NAME}.zip http://www.madsonic.org/download/${PKG_VER}/${PKG_DATE}_${PKG_NAME}-${PKG_VER}.${PKG_BUILD}-standalone.${PKG_EXT} \
   && wget -O /var/${PKG_NAME}/transcode.zip http://www.madsonic.org/download/transcode/${PKG_DATE}_${PKG_NAME}-transcode-linux-x64.zip
 
