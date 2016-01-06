@@ -11,8 +11,8 @@ RUN tar zxf oauth2_proxy.tgz \
     && mv oauth2_proxy-$VERSION.linux-amd64.go1.4.2 /usr/local/bin/ \
     && rm -rf /tmp/google_auth_proxy*
 
-ADD ./oauth_proxy.cfg /config/oauth_proxy.cfg
-ADD ./auth_emails.txt /config/auth_emails.txt
+ADD oauth_proxy.cfg /config/oauth_proxy.cfg
+ADD auth_emails.txt /config/auth_emails.txt
 
 EXPOSE 4180
 
